@@ -1,0 +1,25 @@
+# Python requirements for autonomous-ros workspace
+
+# Computer Vision
+opencv-python>=4.5.0
+opencv-contrib-python>=4.5.0
+
+# Deep Learning - YOLO
+ultralytics>=8.0.0
+torch>=1.10.0
+torchvision>=0.11.0
+
+# Numerical computing
+numpy>=1.21.0
+scipy>=1.7.0
+
+# ROS2 Python dependencies (usually installed via apt)
+# These are listed here for reference
+# Install via: sudo apt install ros-${ROS_DISTRO}-<package>
+# - cv-bridge
+# - vision-msgs
+# - image-transport
+# - ackermann-msgs
+
+# Optional but recommended
+matplotlib>=3.4.0

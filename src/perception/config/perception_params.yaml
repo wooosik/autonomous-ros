@@ -1,0 +1,15 @@
+camera_processor:
+  ros__parameters:
+    enable_undistortion: true
+    enable_enhancement: true
+    brightness_factor: 1.0
+    contrast_factor: 1.0
+    denoise: false
+
+yolo_detector:
+  ros__parameters:
+    model_path: "yolov8n.pt"
+    confidence_threshold: 0.5
+    iou_threshold: 0.45
+    image_size: 640
+    device: "cpu"  # Use "cuda" for GPU acceleration

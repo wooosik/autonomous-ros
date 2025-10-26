@@ -1,0 +1,7 @@
+path_planner:
+  ros__parameters:
+    planning_frequency: 10.0
+    max_velocity: 1.0
+    max_acceleration: 0.5
+    lookahead_distance: 2.0
+    goal_tolerance: 0.1

@@ -1,0 +1,38 @@
+# ROS2 build artifacts
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+*.egg-info/
+dist/
+*.egg
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# YOLO models (large files)
+*.pt
+*.onnx
+*.engine
+*.weights
+
+# Logs and databases
+*.log
+*.sqlite
+
+# OS
+.DS_Store
+Thumbs.db
