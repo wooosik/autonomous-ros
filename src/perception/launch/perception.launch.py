@@ -2,6 +2,7 @@ from launch import LaunchDescription
 from launch_ros.actions import Node
 from launch.actions import DeclareLaunchArgument
 from launch.substitutions import LaunchConfiguration
+from launch.conditions import IfCondition
 from ament_index_python.packages import get_package_share_directory
 import os
 
@@ -28,6 +29,33 @@ def generate_launch_description():
             'device',
             default_value='cpu',
             description='Device to run inference on (cpu or cuda)'
+        ),
+
+        DeclareLaunchArgument(
+            'camera_id',
+            default_value='0',
+            description='Camera device ID (0 for default webcam)'
+        ),
+
+        DeclareLaunchArgument(
+            'use_webcam',
+            default_value='true',
+            description='Use webcam as camera source'
+        ),
+
+        # Webcam publisher node
+        Node(
+            package='perception',
+            executable='webcam_publisher_node.py',
+            name='webcam_publisher',
+            output='screen',
+            parameters=[{
+                'camera_id': LaunchConfiguration('camera_id'),
+                'frame_rate': 30.0,
+                'image_width': 640,
+                'image_height': 480,
+            }],
+            condition=IfCondition(LaunchConfiguration('use_webcam'))
         ),
 
         # Camera processor node

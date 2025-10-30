@@ -32,6 +32,7 @@ ament_python_install_package(${PROJECT_NAME})
 install(PROGRAMS
   scripts/yolo_detector_node.py
   scripts/camera_processor_node.py
+  scripts/webcam_publisher_node.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

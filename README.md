@@ -111,11 +111,17 @@ ros2 launch control control.launch.py
 
 ### Perception Package
 
-Launch the YOLO-based object detector:
+Launch the YOLO-based object detector with webcam:
 
 ```bash
-# Make sure you have downloaded a YOLO model first
+# Using default webcam (camera_id=0)
 ros2 launch perception perception.launch.py model_path:=yolov8n.pt
+
+# Using a specific camera device
+ros2 launch perception perception.launch.py model_path:=yolov8n.pt camera_id:=1
+
+# Disable webcam (if you have another camera source)
+ros2 launch perception perception.launch.py model_path:=yolov8n.pt use_webcam:=false
 ```
 
 ### Running All Packages
